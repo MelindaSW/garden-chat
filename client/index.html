@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <title>garden-chat</title>
+  </head>
+  <body>
+    <div id="chatbox">
+      <header><h1>garden-chat</h1></header>
+      <form>
+        <label for="namefield">Name *</label>
+        <input
+          id="namefield"
+          type="text"
+          minlength="3"
+          maxlength="20"
+          name="sender"
+          placeholder="(Max 20 & min 2 characters)"
+          required
+        />
+        <label for="messagefield">Message *</label>
+        <textarea
+          name="messagefield"
+          rows="5"
+          cols="30"
+          maxlength="100"
+          minlength="3"
+          name="message"
+          placeholder="(Max 100 & min 2 characters)"
+          required
+        ></textarea>
+
+        <input id="submit" type="submit" />
+      </form>
+      <div id="messagepresenter">
+        <ul id="messages">
+          <li>
+            <img id="leaf-left" src="leaf-left.svg" alt="leaf left" />
+            <p>
+              <span id="sender">SenderName</span>
+              :
+              <span class="message"
+                >Lorem ipsum and so on hi there I am writing this Lorem ipsum
+                and so on hi there I am writing this</span
+              >
+            </p>
+          </li>
+
+          <li>
+            <img id="leaf-right" src="leaf-right.svg" alt="leaf left" />
+            <p>
+              <span id="sender">SenderName</span>
+              :
+              <span class="message">Lorem ipsum and so on hi there </span>
+            </p>
+          </li>
+          <li>
+            <img id="leaf-left" src="leaf-left.svg" alt="leaf left" />
+            <p>
+              <span id="sender">SenderName</span>
+              :
+              <span class="message"
+                >Lorem ipsum and so on hi there I am writing this Lorem ipsum
+                and so on hi there is</span
+              >
+            </p>
+          </li>
+
+          <li>
+            <img id="leaf-right" src="leaf-right.svg" alt="leaf left" />
+            <p>
+              <span id="sender">SenderName</span>
+              :
+              <span class="message"
+                >Lorem ipsum and so on hi there I am writing this Lorem ipsum
+                and so on hi there I am writing this</span
+              >
+            </p>
+          </li>
+          <li>
+            <img id="leaf-left" src="leaf-left.svg" alt="leaf left" />
+            <p>
+              <span id="sender">SenderName</span>:
+              <span class="message">Lorem ipsum and so on hi there </span>
+            </p>
+          </li>
+
+          <li>
+            <img id="leaf-right" src="leaf-right.svg" alt="leaf left" />
+            <p>
+              <span id="sender">SenderName</span>
+              :
+              <span class="message"
+                >Lorem ipsum and so on hi there I am writing this Lorem ipsum
+                and so on hi there I am writing this</span
+              >
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
