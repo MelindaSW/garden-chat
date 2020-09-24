@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>se.melindasw</groupId>
-	<artifactId>garden-chat-api</artifactId>
+	<artifactId>garden-chat</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>garden-chat-api</name>
-	<description>Chat api for JMS practice</description>
+	<name>garden-chat</name>
+	<description>Chat api for plant people</description>
 
 	<properties>
 		<java.version>11</java.version>
