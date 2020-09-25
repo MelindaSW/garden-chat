@@ -2,6 +2,7 @@ package se.melindasw.gardenchatapi.message;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import se.melindasw.gardenchatapi.exceptions.IncorrectRequestException;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -18,6 +19,9 @@ public class MessageController {
 
   @PostMapping("/postmessage")
   public String postMessage(@RequestBody MessageDTO message) {
+    if (message.getSender() == null || message.getMessage() == null) {
+      throw new IncorrectRequestException();
+    }
     LocalDateTime timestamp = LocalDateTime.now();
     Message m = new Message(message.getMessage(), message.getSender(), timestamp);
     return service.addMessage(m);

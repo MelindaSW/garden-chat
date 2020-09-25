@@ -1,9 +1,11 @@
 package se.melindasw.gardenchatapi.message;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
+import se.melindasw.gardenchatapi.exceptions.MessageNotFoundException;
 
-import java.time.LocalDateTime;
+import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,17 +37,22 @@ public class MessageServiceImpl implements MessageService {
 
   @Override
   public MessageDTO getOneMessage(Long id) {
-    Message msg;
-    if (repo.findById(id).isPresent()) {
-      msg = repo.findById(id).get();
-      return convertToDTO(msg);
+    MessageDTO msg = null;
+    try {
+      msg = convertToDTO(repo.getOne(id));
+    } catch (EntityNotFoundException e) {
+      throw new MessageNotFoundException(id);
     }
-    return new MessageDTO(null, "Unknown", "Unknown", LocalDateTime.now());
+    return msg;
   }
 
   @Override
   public String deleteMessage(Long id) {
-    repo.deleteById(id);
+    try {
+      repo.deleteById(id);
+    } catch (EmptyResultDataAccessException e) {
+      throw new MessageNotFoundException(id);
+    }
     return "Message with id " + id + " was deleted";
   }
 
