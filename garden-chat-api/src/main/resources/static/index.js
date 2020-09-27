@@ -1,15 +1,16 @@
 $(document).ready(function () {
   const getAllMessages = () => {
-    getAllMessages()
-
     $.get('http://localhost:8080/garden-chat-api/getallmessages')
       .done((response) => {
         renderMessages(response)
+        console.log(response)
       })
       .fail((error) => {
         console.log('failed', error)
       })
   }
+
+  getAllMessages()
 
   const postMessage = (sender, message) => {
     console.log('Posting message', sender, message)
