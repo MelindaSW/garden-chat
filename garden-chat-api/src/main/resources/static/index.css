@@ -12,13 +12,13 @@ body {
   width: 400px;
   margin: auto;
   margin-top: 1rem;
-  border: 4px dotted green;
+  border: 4px solid green;
   height: 900px;
   overflow: auto;
 }
 
 header {
-  height: 150px;
+  height: 100px;
   background-color: #8cd79f;
   color: white;
   display: flex;
@@ -37,6 +37,10 @@ form {
   padding: 30px;
   border-left: 2px solid #8cd79f;
   border-right: 2px solid #8cd79f;
+}
+
+label {
+  font-size: small;
 }
 
 #submit {
@@ -69,6 +73,13 @@ textarea {
   padding: 5px;
 }
 
+#messages p {
+  background-color: #e8f8ec;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 7px;
+}
+
 ul {
   list-style-type: none;
   display: flex;
@@ -77,30 +88,30 @@ ul {
   padding: 0px;
 }
 
-li {
-  border-bottom: 2px solid green;
-}
-
-#leaf-left {
+.leaf-left {
   width: 37%;
   float: left;
 }
 
-#leaf-right {
+.leaf-right {
   width: 37%;
   float: right;
 }
 
-#timestamp {
+.timestamp {
   font-size: xx-small;
+  font-style: italic;
 }
-#sender {
-  font-size: smaller;
+
+.sender {
+  font-size: x-small;
+  font-weight: bold;
 }
 
 .message {
-  margin: auto;
   font-weight: 300;
   font-size: x-small;
+  line-height: 0.5;
+  margin: auto;
   width: 50%;
 }
