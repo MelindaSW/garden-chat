@@ -1,4 +1,5 @@
 body {
+  background-color: rgb(166, 175, 168);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -7,8 +8,10 @@ body {
 }
 
 #chatbox {
+  background-color: white;
   width: 400px;
   margin: auto;
+  margin-top: 1rem;
   border: 4px dotted green;
   height: 900px;
   overflow: auto;
@@ -86,6 +89,10 @@ li {
 #leaf-right {
   width: 37%;
   float: right;
+}
+
+#sender {
+  font-size: smaller;
 }
 
 .message {
