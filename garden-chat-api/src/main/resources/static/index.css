@@ -91,6 +91,9 @@ li {
   float: right;
 }
 
+#timestamp {
+  font-size: xx-small;
+}
 #sender {
   font-size: smaller;
 }

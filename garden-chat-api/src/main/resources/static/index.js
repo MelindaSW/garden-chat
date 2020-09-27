@@ -10,22 +10,14 @@ $(document).ready(function () {
       })
   }
 
-  getAllMessages()
-
-  const postMessage = (sender, message) => {
-    console.log('Posting message', sender, message)
-  }
-
-  $('form').submit((event) => {
-    event.preventDefault()
-    postMessage($('#namefield').val(), $('#messagefield').val())
-    $('#namefield').val() = ''
-    $('#messagefield').val() = ''
-    renderMessages(getAllMessages())
-  })
-
   const renderMessages = (messages) => {
+    messages.reverse()
     $.each(messages, (index, msg) => {
+      const formattedTimestamp =
+        msg.timestamp !== null
+          ? msg.timestamp.replace('T', ' ').substring(0, 16)
+          : ''
+
       $('#messages').append(
         `<li>
         <img
@@ -34,11 +26,35 @@ $(document).ready(function () {
           alt='leaf'
         />
         <p>
+          <span id='timestamp'>${formattedTimestamp}</span><br>
           <span id='sender'>${msg.sender + ':'}</span><br>
           <span class='message'>${msg.message}</span>
         </p>
       </li>`
       )
     })
+  }
+
+  getAllMessages()
+
+  $('form').submit((event) => {
+    event.preventDefault()
+    const url = 'http://localhost:8080/garden-chat-api/postmessage'
+    const body = JSON.stringify({
+      sender: $('#namefield').val(),
+      message: $('#messagefield').val()
+    })
+    console.log(body)
+    $.ajax({
+      url: url,
+      type: 'POST',
+      data: body,
+      contentType: 'application/json',
+      complete: callback
+    })
+  })
+  const callback = (response) => {
+    console.log(response.responseText)
+    // getAllMessages()
   }
 })
