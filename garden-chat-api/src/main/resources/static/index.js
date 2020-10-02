@@ -31,8 +31,7 @@ $(document).ready(function () {
   const renderMessages = (messages) => {
     messages.reverse()
     $('#messages').empty()
-
-    $.each(messages, (index, msg) => {
+    $.each(hardCodedMessages, (index, msg) => {
       $('#messages').append(
         `<li>
         <img
@@ -50,7 +49,6 @@ $(document).ready(function () {
       </li>`
       )
     })
-
     $('#messagepresenter').html($('#messages'))
   }
 
