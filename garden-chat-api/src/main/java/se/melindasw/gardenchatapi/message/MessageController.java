@@ -7,6 +7,7 @@ import se.melindasw.gardenchatapi.exceptions.IncorrectRequestException;
 import java.time.LocalDateTime;
 import java.util.List;
 
+@CrossOrigin
 @RestController
 public class MessageController {
 
@@ -23,7 +24,7 @@ public class MessageController {
       throw new IncorrectRequestException();
     }
     LocalDateTime timestamp = LocalDateTime.now();
-    Message m = new Message(message.getMessage(), message.getSender(), timestamp);
+    Message m = new Message(message.getSender(), message.getMessage(), timestamp);
     return service.addMessage(m);
   }
 
