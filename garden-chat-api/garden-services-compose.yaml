@@ -1,0 +1,19 @@
+# compose file for chat services
+version: '3.1'
+
+services:
+
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+  #    volumes:
+  #      - db-data:/var/lib/postgresql/data
+
+  activemq:
+    image: rmohr/activemq
+    ports:
+      - "8161:8161"
+      - "61616:61616"
