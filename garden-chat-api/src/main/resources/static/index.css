@@ -26,6 +26,8 @@ header {
   justify-content: center;
 }
 
+/*  Form styles */
+
 form {
   display: flex;
   flex-direction: column;
@@ -64,6 +66,8 @@ textarea {
   border-radius: 3px;
   width: 98%;
 }
+
+/* Presenting messages styles */
 
 #messagepresenter {
   width: 95%;
@@ -114,4 +118,23 @@ ul {
   line-height: 0.5;
   margin: auto;
   width: 50%;
+}
+
+/* Scrollbar style */
+
+::-webkit-scrollbar {
+  width: 11px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(225, 245, 225);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(136, 194, 136);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #97d3a6;
 }

@@ -31,7 +31,6 @@ $(document).ready(function () {
   const renderMessages = (messages) => {
     messages.reverse()
     $('#messages').empty()
-
     $.each(messages, (index, msg) => {
       $('#messages').append(
         `<li>
@@ -50,7 +49,6 @@ $(document).ready(function () {
       </li>`
       )
     })
-
     $('#messagepresenter').html($('#messages'))
   }
 
